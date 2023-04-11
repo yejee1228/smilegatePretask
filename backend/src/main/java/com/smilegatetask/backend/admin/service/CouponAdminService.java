@@ -8,4 +8,8 @@ import java.util.List;
 @Component
 public interface CouponAdminService {
     List<User> getCouponList();
+
+    List<User> getCouponListByUserName(String userName);
+
+    List<User> getCouponListByUserPhone(String userPhone);
 }

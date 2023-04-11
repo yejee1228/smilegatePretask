@@ -16,4 +16,16 @@ public class CouponAdminServiceImpl implements CouponAdminService{
     public List<User> getCouponList() {
         return (List<User>)couponAdminRepository.findAll();
     }
+
+    @Override
+    public List<User> getCouponListByUserName(String userName) {
+        return couponAdminRepository.findAllByUserNameLike("%"+userName+"%");
+    }
+
+    @Override
+    public List<User> getCouponListByUserPhone(String userPhone) {
+        return couponAdminRepository.findAllByUserPhoneLike("%"+userPhone+"%");
+    }
+
+
 }

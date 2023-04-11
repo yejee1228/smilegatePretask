@@ -7,8 +7,8 @@ const queryKey = {
     all: ['data'] as const,
 }
 
-export const useGetCouponList = (options?: UseQueryOptions<{ data: IUserForList[] }, AxiosError>) => {
-    return useQuery<{ data: IUserForList[] }, AxiosError>(queryKey.all, () => API.getCouponList(), options)
+export const useGetCouponList = ({ userName, userPhone }: { userName: string, userPhone: string }, options?: UseQueryOptions<{ data: IUserForList[] }, AxiosError>,) => {
+    return useQuery<{ data: IUserForList[] }, AxiosError>(queryKey.all, () => API.getCouponList({ userName, userPhone }), options)
 }
 
 export const useSetUser = () => {

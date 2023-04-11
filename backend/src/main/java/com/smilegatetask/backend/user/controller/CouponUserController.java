@@ -18,9 +18,4 @@ public class CouponUserController {
     public Map<String, Object> instUser(@RequestBody User user) {
         return couponUserService.instUser(user);
     }
-
-    /*@GetMapping("/user/code/{couponCode}")
-    public boolean existCode(@PathVariable String couponCode) {
-        return couponUserService.existCoupon(couponCode);
-    }*/
 }

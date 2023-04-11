@@ -6,8 +6,9 @@ const clientApi = axios.create({
 });
 
 //user list
-export const getCouponList = async () => {
-  const { data } = await clientApi.get(`/admin/coupon/list`)
+export const getCouponList = async ({ userName, userPhone }: { userName: string | null, userPhone: string | null }) => {
+  const url = userName !== '' ? `/admin/coupon/list?userName=${userName}` : userPhone !== '' ? `/admin/coupon/list?userPhone=${userPhone}` : `/admin/coupon/list`
+  const { data } = await clientApi.get(url)
   return data;
 };
 

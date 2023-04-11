@@ -9,10 +9,10 @@ export type UserAction =
     | ReturnType<typeof setUsers>
 
 export type IAdminState = {
-    users: IUserForList[] | null,
+    users: IUserForList[] | [],
 }
 const initialState: IAdminState = {
-    users: null,
+    users: [],
 }
 
 const reducer = (state: IAdminState = initialState, action: UserAction) => {

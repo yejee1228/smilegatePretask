@@ -2,7 +2,7 @@ import React from 'react';
 import * as A from '../styles/adminStyle'
 import { IUserForList } from '@/types';
 
-const Coupon = ({ user, dataType }: { user: IUserForList, dataType: string }) => {
+const Coupon = ({ index, user, dataType }: { index: string | number, user: IUserForList, dataType: string }) => {
     const instDate = dataType === 'data' ? new Date(user.instDate) : user.instDate
     const dateToString = (date: Date) => {
         if (!date) return ''
@@ -22,9 +22,9 @@ const Coupon = ({ user, dataType }: { user: IUserForList, dataType: string }) =>
         return `${year}-${stringMonth}-${stringDay} ${stringHour}:${stringMinute}:${stringSecond}`
     }
     return (
-        <A.CouponItem>
+        <A.CouponItem header={dataType === 'header'}>
             <A.CouponInfoDiv width={'50px'}>
-                {'' + user.couponSeq}
+                {index}
             </A.CouponInfoDiv>
             <A.CouponInfoDiv width={'150px'}>
                 {'' + user.userName}
