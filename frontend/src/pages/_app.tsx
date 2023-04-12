@@ -23,6 +23,7 @@ const queryClient = new QueryClient()
 
 
 function App({ Component, pageProps }: AppProps) {
+  const { store } = wrapper.useWrappedStore(pageProps);
   const router = useRouter();
   return (
     <Provider store={store}>
@@ -48,4 +49,5 @@ function App({ Component, pageProps }: AppProps) {
     </Provider>
   )
 }
-export default wrapper.withRedux(App)
+
+export default App;
