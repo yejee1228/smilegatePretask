@@ -25,7 +25,7 @@ const CouponList = () => {
     useEffect(() => {
         dispatch(setUsers(data))
         refetch()
-    }, [dispatch, data, searchUserName, searchUserPhone])
+    }, [dispatch, refetch, data, searchUserName, searchUserPhone])
 
     const handlerSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const { value } = e.target

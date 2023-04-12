@@ -23,7 +23,7 @@ const ResultCode = () => {
             alert('정보가 없습니다.')
             router.push('/user')
         }
-    }, [])
+    }, [router, user])
 
     return (
         <U.UserWrap>
