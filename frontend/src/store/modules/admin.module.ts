@@ -18,8 +18,7 @@ const initialState: IAdminState = {
 const reducer = (state: IAdminState = initialState, action: UserAction) => {
     switch (action.type) {
         case setUsers.type: {
-            const userArray = action.payload
-            return { ...state, users: Array.isArray(userArray) ? [...userArray].reverse() : action.payload }
+            return { ...state, users: Array.isArray(action.payload) ? [...action.payload].reverse() : action.payload }
         }
 
         default: return state
