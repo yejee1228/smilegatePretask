@@ -1,4 +1,15 @@
 # 쿠폰관리를 위한 페이지 구현
+## 실행방법
+- FE
+```shell
+yarn install
+yarn build
+yarn start
+```
+- BE
+```
+gradle clean / build 후 spring boot 내장 톰캣 실행
+```
 
 ## 과제 내용 
 ### 게임 사전 예약 쿠폰 발급 페이지
